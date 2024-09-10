@@ -1,0 +1,19 @@
+﻿cl : 命令行  warning D9025: 正在重写“/sdl”(用“/GS-”)
+  CleanJob.cpp
+  ReflectiveLoader.cpp
+E:\Project\GIT\PhantomExecution\PhantomExecution\examples\postex-loader\CleanJob.cpp(104,29): warning C4244: “=”: 从“UINT_PTR”转换到“DWORD”，可能丢失数据
+  正在生成代码
+  已完成代码的生成
+  postex-loader.vcxproj -> E:\Project\GIT\PhantomExecution\PhantomExecution\bin\postex-loader\Release\x64\postex-loader.x64.exe
+  
+              _      _               
+             | |    | |              
+    _   _  __| |_ __| |  _ __  _   _ 
+   | | | |/ _` | '__| | | '_ \| | | |
+   | |_| | (_| | |  | |_| |_) | |_| |
+    \__,_|\__,_|_|  |_(_) .__/ \__, |
+                        | |     __/ |
+                        |_|    |___/ 
+      
+  [+] Success: Extracted loader
+  [+] Success: Written UDRL to E:\Project\GIT\PhantomExecution\PhantomExecution\bin\postex-loader\Release\x64\postex-loader.x64.bin. Total Size: 2933 bytes

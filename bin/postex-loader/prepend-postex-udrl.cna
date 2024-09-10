@@ -1,0 +1,42 @@
+# ===========================================================================
+#                                  Utils
+# ===========================================================================
+
+# ----------------------------------------------
+# Print information to the Script Console
+# $1 = message
+# ----------------------------------------------
+sub print_info {
+   println(formatDate("[HH:mm:ss] ") . "\cE[UDRL-VS]\o " . $1);
+}
+
+# ===========================================================================
+#                              Post Exploitation UDRL
+# ===========================================================================
+
+print_info("Post Exploitation Loader loaded");
+
+set POSTEX_RDLL_GENERATE {
+    local('$arch $dll $fileHandle $ldr $loader_path $payload');
+    $dll = $2;
+    $arch = $3;
+    $bid = $4;
+    $getmodule = $5;
+    $getprocad = $6;
+
+    # Read the UDRL from the supplied binary file
+    $loader_path = getFileProper(script_resource("Release"), $arch ,"postex-loader." . $arch . ".bin" );
+
+    $file_handle = openf($loader_path);
+    $ldr = readb($file_handle, -1);
+    closef($file_handle);
+
+    if (strlen($ldr) == 0) {
+        warn("Error: Failed to read $loader_path");
+        return $null;
+    }
+
+    print_info("Post Exploitation UDRL generated (" . strlen($ldr) . " bytes)");
+
+    return $ldr . $dll;
+}
